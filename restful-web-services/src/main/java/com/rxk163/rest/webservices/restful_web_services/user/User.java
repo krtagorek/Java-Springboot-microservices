@@ -2,10 +2,21 @@ package com.rxk163.rest.webservices.restful_web_services.user;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
+@Entity(name="user_details")
 public class User {
+	
+	protected User() {
+		
+	}
+	
+	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	@Size(min=2, message="Name should be atleast 2 characters")
